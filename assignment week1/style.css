@@ -1,0 +1,87 @@
+/* General layout */
+body {
+  background:#0b1a2f;
+  color:#fff;
+  font-family:'Segoe UI',sans-serif;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  height:100vh;
+  margin:0;
+}
+
+.dashboard {
+  text-align:center;
+  max-width:700px;
+  width:90%;
+}
+
+/* Heading */
+h1 {
+  margin-bottom:20px;
+  letter-spacing:1px;
+}
+
+/* Stats + Extra sections */
+.stats, .extra {
+  display:flex;
+  gap:15px;
+  flex-wrap:wrap;
+  justify-content:center;
+  margin-bottom:15px;
+}
+
+/* Card styling */
+.card {
+  flex:1;
+  min-width:180px;
+  min-height:90px;          /* ensures equal height */
+  padding:20px 15px;        /* balanced padding */
+  border-radius:12px;
+  box-shadow:0 0 15px rgba(0,0,0,0.3);
+  transition:transform .5s, background .5s;
+  font-weight:500;
+  display:flex;             /* centers text */
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+}
+
+/* Individual card colors */
+#courses { background:#2ecc71; }
+#assignments { background:#e67e22; }
+#badges { background:#9b59b6; }
+#progress { background:#1abc9c; }
+#deadline { background:#f39c12; }
+#rank { background:#34495e; }
+
+/* Button styling */
+.update {
+  margin-top:20px;
+  padding:12px 30px;        /* adjusted for better proportion */
+  font-size:16px;
+  background:#3498db;
+  color:#fff;
+  border:none;
+  border-radius:8px;
+  cursor:pointer;
+  transition:background .3s, transform .3s;
+}
+
+.update:hover {
+  background:#2980b9;
+  transform:scale(1.05);
+}
+
+/* Update effect */
+.update:active ~ .stats .card,
+.update:active ~ .extra .card {
+  transform:scale(1.08);
+  filter:brightness(1.2);
+}
+
+/* Responsive design */
+@media(max-width:600px) {
+  .stats, .extra { flex-direction:column; }
+  .card { margin-bottom:10px; }
+}
